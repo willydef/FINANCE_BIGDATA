@@ -32,6 +32,38 @@ The project demonstrates batch ETL processing, transaction quality controls, a s
 
 ## 3. Project Architecture
 
+```mermaid
+flowchart TD
+    subgraph BATCH["1. Automated Batch Analytics Pipeline"]
+        A["Banking CSV Files<br/>Clients, Accounts, Transactions"]
+        B["PySpark ETL<br/>Extract, Transform, Load"]
+        C[("Processed Parquet Data")]
+        D["Banking Analytics<br/>Transaction Enrichment & Risk Reporting"]
+        E[("Analytical Parquet Datasets")]
+        F["Python / Pandas<br/>CSV Export"]
+        G["Power BI Dashboard<br/>Manual Refresh"]
+
+        A --> B --> C --> D --> E --> F --> G
+    end
+
+    subgraph KAFKA["2. Separate Kafka Proof of Concept"]
+        H["JSON Transaction Events"]
+        I["Apache Kafka<br/>Docker on Ubuntu Server"]
+        J["PySpark Kafka Batch Reader"]
+        K{"Transaction Validation"}
+        L[("Valid Transactions<br/>Parquet")]
+        M[("Rejected Transactions<br/>Parquet")]
+
+        H --> I --> J --> K
+        K -->|Valid| L
+        K -->|Invalid| M
+    end
+
+    style BATCH fill:#eaf3ff,stroke:#2563eb,color:#111827
+    style KAFKA fill:#fff3e6,stroke:#ea580c,color:#111827
+```
+
+
 The project currently contains two processing workflows.
 
 ### Batch Analytics Pipeline
