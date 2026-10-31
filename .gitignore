@@ -1,0 +1,34 @@
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Spark and Hadoop
+.sparkStaging/
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+_SUCCESS
+
+# Banking data and generated outputs
+data/
+output/
+
+# Power BI generated CSV files
+powerbi/*.csv
+
+# Local configuration and secrets
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
