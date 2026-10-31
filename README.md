@@ -180,6 +180,13 @@ This demonstrates Kafka ingestion and batch validation of Kafka records, not a f
 
 ## 8. Power BI Dashboard
 
+### Banking Analytics Dashboard
+
+![FINANCE_BIGDATA Power BI Dashboard](docs/images/dashboard_powerbi.png)
+
+*Interactive Power BI dashboard displaying banking transaction KPIs, transaction amounts by type, risk-level analysis, and city filtering.*
+
+
 The Power BI dashboard includes:
 
 - Total transaction count
